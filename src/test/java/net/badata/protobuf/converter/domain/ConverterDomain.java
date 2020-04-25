@@ -17,6 +17,7 @@ import net.badata.protobuf.converter.type.DateLongConverterImpl;
 import net.badata.protobuf.converter.type.EnumStringConverter;
 import net.badata.protobuf.converter.type.SetListConverterImpl;
 
+import java.util.Map;
 import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.List;
@@ -61,6 +62,10 @@ public class ConverterDomain {
 		private ByteString bytesValue;
 		@ProtoField
 		private Test recursiveValue;
+		@ProtoField
+		private Map<String, String> simpleMapValue;
+		@ProtoField
+		private Map<String, PrimitiveTest> complexMapValue;
 
 
 		public Long getLongValue() {
@@ -182,6 +187,23 @@ public class ConverterDomain {
 
 		public void setRecursiveValue(Test recursiveValue) {
 			this.recursiveValue = recursiveValue;
+		}
+
+		public Map<String, String> getSimpleMapValue() {
+			return simpleMapValue;
+		}
+
+		public void setSimpleMapValue(Map<String, String> simpleMapValue) {
+			this.simpleMapValue = simpleMapValue;
+		}
+
+		public Map<String, PrimitiveTest> getComplexMapValue() {
+			return complexMapValue;
+		}
+
+		public void setComplexMapValue(
+				Map<String, PrimitiveTest> complexMapValue) {
+			this.complexMapValue = complexMapValue;
 		}
 	}
 

@@ -7,6 +7,7 @@ import net.badata.protobuf.converter.type.TypeConverter;
 import net.badata.protobuf.converter.utils.FieldUtils;
 import net.badata.protobuf.converter.utils.Primitives;
 
+import java.util.Map;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
@@ -74,6 +75,9 @@ public class ProtobufWriter extends AbstractWriter {
 		}
 		if (Collection.class.isAssignableFrom(valueClass)) {
 			return Iterable.class;
+		}
+		if (Map.class.isAssignableFrom(valueClass)) {
+			return Map.class;
 		}
 		return valueClass;
 	}

@@ -2550,6 +2550,74 @@ public final class ConverterProto {
      * <code>.net.badata.protobuf.converter.proto.ConverterTest recursiveValue = 15;</code>
      */
     net.badata.protobuf.converter.proto.ConverterProto.ConverterTestOrBuilder getRecursiveValueOrBuilder();
+
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+    int getSimpleMapValueCount();
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+    boolean containsSimpleMapValue(
+        java.lang.String key);
+    /**
+     * Use {@link #getSimpleMapValueMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getSimpleMapValue();
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getSimpleMapValueMap();
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+
+    java.lang.String getSimpleMapValueOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+
+    java.lang.String getSimpleMapValueOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+    int getComplexMapValueCount();
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+    boolean containsComplexMapValue(
+        java.lang.String key);
+    /**
+     * Use {@link #getComplexMapValueMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+    getComplexMapValue();
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+    java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+    getComplexMapValueMap();
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+
+    net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest getComplexMapValueOrDefault(
+        java.lang.String key,
+        net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest defaultValue);
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+
+    net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest getComplexMapValueOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code net.badata.protobuf.converter.proto.ConverterTest}
@@ -2732,6 +2800,32 @@ public final class ConverterProto {
 
               break;
             }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+                simpleMapValue_ = com.google.protobuf.MapField.newMapField(
+                    SimpleMapValueDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00008000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              simpleMapValue__ = input.readMessage(
+                  SimpleMapValueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              simpleMapValue_.getMutableMap().put(
+                  simpleMapValue__.getKey(), simpleMapValue__.getValue());
+              break;
+            }
+            case 138: {
+              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+                complexMapValue_ = com.google.protobuf.MapField.newMapField(
+                    ComplexMapValueDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00010000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+              complexMapValue__ = input.readMessage(
+                  ComplexMapValueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              complexMapValue_.getMutableMap().put(
+                  complexMapValue__.getKey(), complexMapValue__.getValue());
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2761,6 +2855,19 @@ public final class ConverterProto {
       return net.badata.protobuf.converter.proto.ConverterProto.internal_static_net_badata_protobuf_converter_proto_ConverterTest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 16:
+          return internalGetSimpleMapValue();
+        case 17:
+          return internalGetComplexMapValue();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return net.badata.protobuf.converter.proto.ConverterProto.internal_static_net_badata_protobuf_converter_proto_ConverterTest_fieldAccessorTable
@@ -3075,6 +3182,158 @@ public final class ConverterProto {
       return getRecursiveValue();
     }
 
+    public static final int SIMPLEMAPVALUE_FIELD_NUMBER = 16;
+    private static final class SimpleMapValueDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  net.badata.protobuf.converter.proto.ConverterProto.internal_static_net_badata_protobuf_converter_proto_ConverterTest_SimpleMapValueEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> simpleMapValue_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetSimpleMapValue() {
+      if (simpleMapValue_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SimpleMapValueDefaultEntryHolder.defaultEntry);
+      }
+      return simpleMapValue_;
+    }
+
+    public int getSimpleMapValueCount() {
+      return internalGetSimpleMapValue().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+
+    public boolean containsSimpleMapValue(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetSimpleMapValue().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSimpleMapValueMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSimpleMapValue() {
+      return getSimpleMapValueMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getSimpleMapValueMap() {
+      return internalGetSimpleMapValue().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+
+    public java.lang.String getSimpleMapValueOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSimpleMapValue().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+     */
+
+    public java.lang.String getSimpleMapValueOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSimpleMapValue().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int COMPLEXMAPVALUE_FIELD_NUMBER = 17;
+    private static final class ComplexMapValueDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>newDefaultInstance(
+                  net.badata.protobuf.converter.proto.ConverterProto.internal_static_net_badata_protobuf_converter_proto_ConverterTest_ComplexMapValueEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> complexMapValue_;
+    private com.google.protobuf.MapField<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+    internalGetComplexMapValue() {
+      if (complexMapValue_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ComplexMapValueDefaultEntryHolder.defaultEntry);
+      }
+      return complexMapValue_;
+    }
+
+    public int getComplexMapValueCount() {
+      return internalGetComplexMapValue().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+
+    public boolean containsComplexMapValue(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetComplexMapValue().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getComplexMapValueMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> getComplexMapValue() {
+      return getComplexMapValueMap();
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+
+    public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> getComplexMapValueMap() {
+      return internalGetComplexMapValue().getMap();
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+
+    public net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest getComplexMapValueOrDefault(
+        java.lang.String key,
+        net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> map =
+          internalGetComplexMapValue().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+     */
+
+    public net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest getComplexMapValueOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> map =
+          internalGetComplexMapValue().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3132,6 +3391,18 @@ public final class ConverterProto {
       if (recursiveValue_ != null) {
         output.writeMessage(15, getRecursiveValue());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetSimpleMapValue(),
+          SimpleMapValueDefaultEntryHolder.defaultEntry,
+          16);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetComplexMapValue(),
+          ComplexMapValueDefaultEntryHolder.defaultEntry,
+          17);
       unknownFields.writeTo(output);
     }
 
@@ -3203,6 +3474,26 @@ public final class ConverterProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getRecursiveValue());
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetSimpleMapValue().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        simpleMapValue__ = SimpleMapValueDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(16, simpleMapValue__);
+      }
+      for (java.util.Map.Entry<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> entry
+           : internalGetComplexMapValue().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+        complexMapValue__ = ComplexMapValueDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(17, complexMapValue__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3265,6 +3556,10 @@ public final class ConverterProto {
         result = result && getRecursiveValue()
             .equals(other.getRecursiveValue());
       }
+      result = result && internalGetSimpleMapValue().equals(
+          other.internalGetSimpleMapValue());
+      result = result && internalGetComplexMapValue().equals(
+          other.internalGetComplexMapValue());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3325,6 +3620,14 @@ public final class ConverterProto {
       if (hasRecursiveValue()) {
         hash = (37 * hash) + RECURSIVEVALUE_FIELD_NUMBER;
         hash = (53 * hash) + getRecursiveValue().hashCode();
+      }
+      if (!internalGetSimpleMapValue().getMap().isEmpty()) {
+        hash = (37 * hash) + SIMPLEMAPVALUE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSimpleMapValue().hashCode();
+      }
+      if (!internalGetComplexMapValue().getMap().isEmpty()) {
+        hash = (37 * hash) + COMPLEXMAPVALUE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetComplexMapValue().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3431,6 +3734,32 @@ public final class ConverterProto {
         return net.badata.protobuf.converter.proto.ConverterProto.internal_static_net_badata_protobuf_converter_proto_ConverterTest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 16:
+            return internalGetSimpleMapValue();
+          case 17:
+            return internalGetComplexMapValue();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 16:
+            return internalGetMutableSimpleMapValue();
+          case 17:
+            return internalGetMutableComplexMapValue();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return net.badata.protobuf.converter.proto.ConverterProto.internal_static_net_badata_protobuf_converter_proto_ConverterTest_fieldAccessorTable
@@ -3516,6 +3845,8 @@ public final class ConverterProto {
           recursiveValue_ = null;
           recursiveValueBuilder_ = null;
         }
+        internalGetMutableSimpleMapValue().clear();
+        internalGetMutableComplexMapValue().clear();
         return this;
       }
 
@@ -3599,6 +3930,10 @@ public final class ConverterProto {
         } else {
           result.recursiveValue_ = recursiveValueBuilder_.build();
         }
+        result.simpleMapValue_ = internalGetSimpleMapValue();
+        result.simpleMapValue_.makeImmutable();
+        result.complexMapValue_ = internalGetComplexMapValue();
+        result.complexMapValue_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3763,6 +4098,10 @@ public final class ConverterProto {
         if (other.hasRecursiveValue()) {
           mergeRecursiveValue(other.getRecursiveValue());
         }
+        internalGetMutableSimpleMapValue().mergeFrom(
+            other.internalGetSimpleMapValue());
+        internalGetMutableComplexMapValue().mergeFrom(
+            other.internalGetComplexMapValue());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5300,6 +5639,252 @@ public final class ConverterProto {
         }
         return recursiveValueBuilder_;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> simpleMapValue_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetSimpleMapValue() {
+        if (simpleMapValue_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              SimpleMapValueDefaultEntryHolder.defaultEntry);
+        }
+        return simpleMapValue_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableSimpleMapValue() {
+        onChanged();;
+        if (simpleMapValue_ == null) {
+          simpleMapValue_ = com.google.protobuf.MapField.newMapField(
+              SimpleMapValueDefaultEntryHolder.defaultEntry);
+        }
+        if (!simpleMapValue_.isMutable()) {
+          simpleMapValue_ = simpleMapValue_.copy();
+        }
+        return simpleMapValue_;
+      }
+
+      public int getSimpleMapValueCount() {
+        return internalGetSimpleMapValue().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+
+      public boolean containsSimpleMapValue(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetSimpleMapValue().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSimpleMapValueMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getSimpleMapValue() {
+        return getSimpleMapValueMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getSimpleMapValueMap() {
+        return internalGetSimpleMapValue().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+
+      public java.lang.String getSimpleMapValueOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetSimpleMapValue().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+
+      public java.lang.String getSimpleMapValueOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetSimpleMapValue().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearSimpleMapValue() {
+        internalGetMutableSimpleMapValue().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+
+      public Builder removeSimpleMapValue(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableSimpleMapValue().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableSimpleMapValue() {
+        return internalGetMutableSimpleMapValue().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+      public Builder putSimpleMapValue(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableSimpleMapValue().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMapValue = 16;</code>
+       */
+
+      public Builder putAllSimpleMapValue(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableSimpleMapValue().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> complexMapValue_;
+      private com.google.protobuf.MapField<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+      internalGetComplexMapValue() {
+        if (complexMapValue_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ComplexMapValueDefaultEntryHolder.defaultEntry);
+        }
+        return complexMapValue_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+      internalGetMutableComplexMapValue() {
+        onChanged();;
+        if (complexMapValue_ == null) {
+          complexMapValue_ = com.google.protobuf.MapField.newMapField(
+              ComplexMapValueDefaultEntryHolder.defaultEntry);
+        }
+        if (!complexMapValue_.isMutable()) {
+          complexMapValue_ = complexMapValue_.copy();
+        }
+        return complexMapValue_;
+      }
+
+      public int getComplexMapValueCount() {
+        return internalGetComplexMapValue().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+
+      public boolean containsComplexMapValue(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetComplexMapValue().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getComplexMapValueMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> getComplexMapValue() {
+        return getComplexMapValueMap();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+
+      public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> getComplexMapValueMap() {
+        return internalGetComplexMapValue().getMap();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+
+      public net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest getComplexMapValueOrDefault(
+          java.lang.String key,
+          net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> map =
+            internalGetComplexMapValue().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+
+      public net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest getComplexMapValueOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> map =
+            internalGetComplexMapValue().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearComplexMapValue() {
+        internalGetMutableComplexMapValue().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+
+      public Builder removeComplexMapValue(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableComplexMapValue().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest>
+      getMutableComplexMapValue() {
+        return internalGetMutableComplexMapValue().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+      public Builder putComplexMapValue(
+          java.lang.String key,
+          net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableComplexMapValue().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.PrimitiveTest&gt; complexMapValue = 17;</code>
+       */
+
+      public Builder putAllComplexMapValue(
+          java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.ConverterProto.PrimitiveTest> values) {
+        internalGetMutableComplexMapValue().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -5369,6 +5954,16 @@ public final class ConverterProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_net_badata_protobuf_converter_proto_ConverterTest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_net_badata_protobuf_converter_proto_ConverterTest_SimpleMapValueEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_net_badata_protobuf_converter_proto_ConverterTest_SimpleMapValueEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_net_badata_protobuf_converter_proto_ConverterTest_ComplexMapValueEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_net_badata_protobuf_converter_proto_ConverterTest_ComplexMapValueEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5388,7 +5983,7 @@ public final class ConverterProto {
       "\022\022\n\nnullString\030\001 \001(\t\022\036\n\026customInspection" +
       "String\030\002 \001(\t\022M\n\021defaultPrimitives\030\003 \001(\0132" +
       "2.net.badata.protobuf.converter.proto.Pr" +
-      "imitiveTest\"\353\005\n\rConverterTest\022\020\n\010intValu" +
+      "imitiveTest\"\320\010\n\rConverterTest\022\020\n\010intValu" +
       "e\030\001 \001(\005\022\021\n\tlongValue\030\002 \001(\003\022\022\n\nfloatValue" +
       "\030\003 \001(\002\022\023\n\013doubleValue\030\004 \001(\001\022\024\n\014booleanVa" +
       "lue\030\005 \001(\010\022\023\n\013stringValue\030\006 \001(\t\022J\n\016primit" +
@@ -5407,8 +6002,17 @@ public final class ConverterProto {
       "erter.proto.PrimitiveTest\022\022\n\nbytesValue\030" +
       "\016 \001(\014\022J\n\016recursiveValue\030\017 \001(\01322.net.bada" +
       "ta.protobuf.converter.proto.ConverterTes" +
-      "tB5\n#net.badata.protobuf.converter.proto" +
-      "B\016ConverterProtob\006proto3"
+      "t\022^\n\016simpleMapValue\030\020 \003(\0132F.net.badata.p" +
+      "rotobuf.converter.proto.ConverterTest.Si" +
+      "mpleMapValueEntry\022`\n\017complexMapValue\030\021 \003" +
+      "(\0132G.net.badata.protobuf.converter.proto" +
+      ".ConverterTest.ComplexMapValueEntry\0325\n\023S" +
+      "impleMapValueEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\032j\n\024ComplexMapValueEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.net.badata.prot" +
+      "obuf.converter.proto.PrimitiveTest:\0028\001B5" +
+      "\n#net.badata.protobuf.converter.protoB\016C" +
+      "onverterProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5445,7 +6049,19 @@ public final class ConverterProto {
     internal_static_net_badata_protobuf_converter_proto_ConverterTest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_net_badata_protobuf_converter_proto_ConverterTest_descriptor,
-        new java.lang.String[] { "IntValue", "LongValue", "FloatValue", "DoubleValue", "BooleanValue", "StringValue", "PrimitiveValue", "FieldConversionValue", "NullDefaultValue", "StringListValue", "ComplexListValue", "ComplexSetValue", "ComplexNullableCollectionValue", "BytesValue", "RecursiveValue", });
+        new java.lang.String[] { "IntValue", "LongValue", "FloatValue", "DoubleValue", "BooleanValue", "StringValue", "PrimitiveValue", "FieldConversionValue", "NullDefaultValue", "StringListValue", "ComplexListValue", "ComplexSetValue", "ComplexNullableCollectionValue", "BytesValue", "RecursiveValue", "SimpleMapValue", "ComplexMapValue", });
+    internal_static_net_badata_protobuf_converter_proto_ConverterTest_SimpleMapValueEntry_descriptor =
+      internal_static_net_badata_protobuf_converter_proto_ConverterTest_descriptor.getNestedTypes().get(0);
+    internal_static_net_badata_protobuf_converter_proto_ConverterTest_SimpleMapValueEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_net_badata_protobuf_converter_proto_ConverterTest_SimpleMapValueEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_net_badata_protobuf_converter_proto_ConverterTest_ComplexMapValueEntry_descriptor =
+      internal_static_net_badata_protobuf_converter_proto_ConverterTest_descriptor.getNestedTypes().get(1);
+    internal_static_net_badata_protobuf_converter_proto_ConverterTest_ComplexMapValueEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_net_badata_protobuf_converter_proto_ConverterTest_ComplexMapValueEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -633,6 +633,74 @@ public final class MappingProto {
      */
     net.badata.protobuf.converter.proto.MappingProto.NestedTestOrBuilder getNestedListValueOrBuilder(
         int index);
+
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+    int getSimpleMapCount();
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+    boolean containsSimpleMap(
+        java.lang.String key);
+    /**
+     * Use {@link #getSimpleMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getSimpleMap();
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getSimpleMapMap();
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+
+    java.lang.String getSimpleMapOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+
+    java.lang.String getSimpleMapOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+    int getNestedMapCount();
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+    boolean containsNestedMap(
+        java.lang.String key);
+    /**
+     * Use {@link #getNestedMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+    getNestedMap();
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+    java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+    getNestedMapMap();
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+
+    net.badata.protobuf.converter.proto.MappingProto.NestedTest getNestedMapOrDefault(
+        java.lang.String key,
+        net.badata.protobuf.converter.proto.MappingProto.NestedTest defaultValue);
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+
+    net.badata.protobuf.converter.proto.MappingProto.NestedTest getNestedMapOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code net.badata.protobuf.converter.proto.MappingTest}
@@ -750,6 +818,32 @@ public final class MappingProto {
                   input.readMessage(net.badata.protobuf.converter.proto.MappingProto.NestedTest.parser(), extensionRegistry));
               break;
             }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                simpleMap_ = com.google.protobuf.MapField.newMapField(
+                    SimpleMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000200;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              simpleMap__ = input.readMessage(
+                  SimpleMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              simpleMap_.getMutableMap().put(
+                  simpleMap__.getKey(), simpleMap__.getValue());
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                nestedMap_ = com.google.protobuf.MapField.newMapField(
+                    NestedMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000400;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+              nestedMap__ = input.readMessage(
+                  NestedMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              nestedMap_.getMutableMap().put(
+                  nestedMap__.getKey(), nestedMap__.getValue());
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -773,6 +867,19 @@ public final class MappingProto {
       return net.badata.protobuf.converter.proto.MappingProto.internal_static_net_badata_protobuf_converter_proto_MappingTest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetSimpleMap();
+        case 11:
+          return internalGetNestedMap();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return net.badata.protobuf.converter.proto.MappingProto.internal_static_net_badata_protobuf_converter_proto_MappingTest_fieldAccessorTable
@@ -945,6 +1052,158 @@ public final class MappingProto {
       return nestedListValue_.get(index);
     }
 
+    public static final int SIMPLEMAP_FIELD_NUMBER = 10;
+    private static final class SimpleMapDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  net.badata.protobuf.converter.proto.MappingProto.internal_static_net_badata_protobuf_converter_proto_MappingTest_SimpleMapEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> simpleMap_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetSimpleMap() {
+      if (simpleMap_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SimpleMapDefaultEntryHolder.defaultEntry);
+      }
+      return simpleMap_;
+    }
+
+    public int getSimpleMapCount() {
+      return internalGetSimpleMap().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+
+    public boolean containsSimpleMap(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetSimpleMap().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSimpleMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSimpleMap() {
+      return getSimpleMapMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getSimpleMapMap() {
+      return internalGetSimpleMap().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+
+    public java.lang.String getSimpleMapOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSimpleMap().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+     */
+
+    public java.lang.String getSimpleMapOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSimpleMap().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int NESTEDMAP_FIELD_NUMBER = 11;
+    private static final class NestedMapDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>newDefaultInstance(
+                  net.badata.protobuf.converter.proto.MappingProto.internal_static_net_badata_protobuf_converter_proto_MappingTest_NestedMapEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  net.badata.protobuf.converter.proto.MappingProto.NestedTest.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> nestedMap_;
+    private com.google.protobuf.MapField<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+    internalGetNestedMap() {
+      if (nestedMap_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            NestedMapDefaultEntryHolder.defaultEntry);
+      }
+      return nestedMap_;
+    }
+
+    public int getNestedMapCount() {
+      return internalGetNestedMap().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+
+    public boolean containsNestedMap(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetNestedMap().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getNestedMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> getNestedMap() {
+      return getNestedMapMap();
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+
+    public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> getNestedMapMap() {
+      return internalGetNestedMap().getMap();
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+
+    public net.badata.protobuf.converter.proto.MappingProto.NestedTest getNestedMapOrDefault(
+        java.lang.String key,
+        net.badata.protobuf.converter.proto.MappingProto.NestedTest defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> map =
+          internalGetNestedMap().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+     */
+
+    public net.badata.protobuf.converter.proto.MappingProto.NestedTest getNestedMapOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> map =
+          internalGetNestedMap().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -984,6 +1243,18 @@ public final class MappingProto {
       for (int i = 0; i < nestedListValue_.size(); i++) {
         output.writeMessage(9, nestedListValue_.get(i));
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetSimpleMap(),
+          SimpleMapDefaultEntryHolder.defaultEntry,
+          10);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetNestedMap(),
+          NestedMapDefaultEntryHolder.defaultEntry,
+          11);
       unknownFields.writeTo(output);
     }
 
@@ -1031,6 +1302,26 @@ public final class MappingProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, nestedListValue_.get(i));
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetSimpleMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        simpleMap__ = SimpleMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(10, simpleMap__);
+      }
+      for (java.util.Map.Entry<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> entry
+           : internalGetNestedMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+        nestedMap__ = NestedMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(11, nestedMap__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1072,6 +1363,10 @@ public final class MappingProto {
           .equals(other.getStringListValueList());
       result = result && getNestedListValueList()
           .equals(other.getNestedListValueList());
+      result = result && internalGetSimpleMap().equals(
+          other.internalGetSimpleMap());
+      result = result && internalGetNestedMap().equals(
+          other.internalGetNestedMap());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1110,6 +1405,14 @@ public final class MappingProto {
       if (getNestedListValueCount() > 0) {
         hash = (37 * hash) + NESTEDLISTVALUE_FIELD_NUMBER;
         hash = (53 * hash) + getNestedListValueList().hashCode();
+      }
+      if (!internalGetSimpleMap().getMap().isEmpty()) {
+        hash = (37 * hash) + SIMPLEMAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSimpleMap().hashCode();
+      }
+      if (!internalGetNestedMap().getMap().isEmpty()) {
+        hash = (37 * hash) + NESTEDMAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetNestedMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1216,6 +1519,32 @@ public final class MappingProto {
         return net.badata.protobuf.converter.proto.MappingProto.internal_static_net_badata_protobuf_converter_proto_MappingTest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 10:
+            return internalGetSimpleMap();
+          case 11:
+            return internalGetNestedMap();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 10:
+            return internalGetMutableSimpleMap();
+          case 11:
+            return internalGetMutableNestedMap();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return net.badata.protobuf.converter.proto.MappingProto.internal_static_net_badata_protobuf_converter_proto_MappingTest_fieldAccessorTable
@@ -1267,6 +1596,8 @@ public final class MappingProto {
         } else {
           nestedListValueBuilder_.clear();
         }
+        internalGetMutableSimpleMap().clear();
+        internalGetMutableNestedMap().clear();
         return this;
       }
 
@@ -1316,6 +1647,10 @@ public final class MappingProto {
         } else {
           result.nestedListValue_ = nestedListValueBuilder_.build();
         }
+        result.simpleMap_ = internalGetSimpleMap();
+        result.simpleMap_.makeImmutable();
+        result.nestedMap_ = internalGetNestedMap();
+        result.nestedMap_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1416,6 +1751,10 @@ public final class MappingProto {
             }
           }
         }
+        internalGetMutableSimpleMap().mergeFrom(
+            other.internalGetSimpleMap());
+        internalGetMutableNestedMap().mergeFrom(
+            other.internalGetNestedMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2093,6 +2432,252 @@ public final class MappingProto {
         }
         return nestedListValueBuilder_;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> simpleMap_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetSimpleMap() {
+        if (simpleMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              SimpleMapDefaultEntryHolder.defaultEntry);
+        }
+        return simpleMap_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableSimpleMap() {
+        onChanged();;
+        if (simpleMap_ == null) {
+          simpleMap_ = com.google.protobuf.MapField.newMapField(
+              SimpleMapDefaultEntryHolder.defaultEntry);
+        }
+        if (!simpleMap_.isMutable()) {
+          simpleMap_ = simpleMap_.copy();
+        }
+        return simpleMap_;
+      }
+
+      public int getSimpleMapCount() {
+        return internalGetSimpleMap().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+
+      public boolean containsSimpleMap(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetSimpleMap().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSimpleMapMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getSimpleMap() {
+        return getSimpleMapMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getSimpleMapMap() {
+        return internalGetSimpleMap().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+
+      public java.lang.String getSimpleMapOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetSimpleMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+
+      public java.lang.String getSimpleMapOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetSimpleMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearSimpleMap() {
+        internalGetMutableSimpleMap().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+
+      public Builder removeSimpleMap(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableSimpleMap().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableSimpleMap() {
+        return internalGetMutableSimpleMap().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+      public Builder putSimpleMap(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableSimpleMap().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; simpleMap = 10;</code>
+       */
+
+      public Builder putAllSimpleMap(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableSimpleMap().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> nestedMap_;
+      private com.google.protobuf.MapField<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+      internalGetNestedMap() {
+        if (nestedMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              NestedMapDefaultEntryHolder.defaultEntry);
+        }
+        return nestedMap_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+      internalGetMutableNestedMap() {
+        onChanged();;
+        if (nestedMap_ == null) {
+          nestedMap_ = com.google.protobuf.MapField.newMapField(
+              NestedMapDefaultEntryHolder.defaultEntry);
+        }
+        if (!nestedMap_.isMutable()) {
+          nestedMap_ = nestedMap_.copy();
+        }
+        return nestedMap_;
+      }
+
+      public int getNestedMapCount() {
+        return internalGetNestedMap().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+
+      public boolean containsNestedMap(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetNestedMap().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getNestedMapMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> getNestedMap() {
+        return getNestedMapMap();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+
+      public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> getNestedMapMap() {
+        return internalGetNestedMap().getMap();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+
+      public net.badata.protobuf.converter.proto.MappingProto.NestedTest getNestedMapOrDefault(
+          java.lang.String key,
+          net.badata.protobuf.converter.proto.MappingProto.NestedTest defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> map =
+            internalGetNestedMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+
+      public net.badata.protobuf.converter.proto.MappingProto.NestedTest getNestedMapOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> map =
+            internalGetNestedMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearNestedMap() {
+        internalGetMutableNestedMap().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+
+      public Builder removeNestedMap(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableNestedMap().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest>
+      getMutableNestedMap() {
+        return internalGetMutableNestedMap().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+      public Builder putNestedMap(
+          java.lang.String key,
+          net.badata.protobuf.converter.proto.MappingProto.NestedTest value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableNestedMap().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .net.badata.protobuf.converter.proto.NestedTest&gt; nestedMap = 11;</code>
+       */
+
+      public Builder putAllNestedMap(
+          java.util.Map<java.lang.String, net.badata.protobuf.converter.proto.MappingProto.NestedTest> values) {
+        internalGetMutableNestedMap().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -2152,6 +2737,16 @@ public final class MappingProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_net_badata_protobuf_converter_proto_MappingTest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_net_badata_protobuf_converter_proto_MappingTest_SimpleMapEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_net_badata_protobuf_converter_proto_MappingTest_SimpleMapEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_net_badata_protobuf_converter_proto_MappingTest_NestedMapEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_net_badata_protobuf_converter_proto_MappingTest_NestedMapEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2163,16 +2758,24 @@ public final class MappingProto {
     java.lang.String[] descriptorData = {
       "\n\022mapping_test.proto\022#net.badata.protobu" +
       "f.converter.proto\"!\n\nNestedTest\022\023\n\013strin" +
-      "gValue\030\001 \001(\t\"\257\002\n\013MappingTest\022\020\n\010intValue" +
+      "gValue\030\001 \001(\t\"\354\004\n\013MappingTest\022\020\n\010intValue" +
       "\030\001 \001(\005\022\021\n\tlongValue\030\002 \001(\003\022\022\n\nfloatValue\030" +
       "\003 \001(\002\022\023\n\013doubleValue\030\004 \001(\001\022\024\n\014booleanVal" +
       "ue\030\005 \001(\010\022\023\n\013stringValue\030\006 \001(\t\022D\n\013nestedV" +
       "alue\030\007 \001(\0132/.net.badata.protobuf.convert" +
       "er.proto.NestedTest\022\027\n\017stringListValue\030\010" +
       " \003(\t\022H\n\017nestedListValue\030\t \003(\0132/.net.bada" +
-      "ta.protobuf.converter.proto.NestedTestB3" +
-      "\n#net.badata.protobuf.converter.protoB\014M" +
-      "appingProtob\006proto3"
+      "ta.protobuf.converter.proto.NestedTest\022R" +
+      "\n\tsimpleMap\030\n \003(\0132?.net.badata.protobuf." +
+      "converter.proto.MappingTest.SimpleMapEnt" +
+      "ry\022R\n\tnestedMap\030\013 \003(\0132?.net.badata.proto" +
+      "buf.converter.proto.MappingTest.NestedMa" +
+      "pEntry\0320\n\016SimpleMapEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\032a\n\016NestedMapEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022>\n\005value\030\002 \001(\0132/.net.badata.prot" +
+      "obuf.converter.proto.NestedTest:\0028\001B3\n#n" +
+      "et.badata.protobuf.converter.protoB\014Mapp" +
+      "ingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2197,7 +2800,19 @@ public final class MappingProto {
     internal_static_net_badata_protobuf_converter_proto_MappingTest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_net_badata_protobuf_converter_proto_MappingTest_descriptor,
-        new java.lang.String[] { "IntValue", "LongValue", "FloatValue", "DoubleValue", "BooleanValue", "StringValue", "NestedValue", "StringListValue", "NestedListValue", });
+        new java.lang.String[] { "IntValue", "LongValue", "FloatValue", "DoubleValue", "BooleanValue", "StringValue", "NestedValue", "StringListValue", "NestedListValue", "SimpleMap", "NestedMap", });
+    internal_static_net_badata_protobuf_converter_proto_MappingTest_SimpleMapEntry_descriptor =
+      internal_static_net_badata_protobuf_converter_proto_MappingTest_descriptor.getNestedTypes().get(0);
+    internal_static_net_badata_protobuf_converter_proto_MappingTest_SimpleMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_net_badata_protobuf_converter_proto_MappingTest_SimpleMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_net_badata_protobuf_converter_proto_MappingTest_NestedMapEntry_descriptor =
+      internal_static_net_badata_protobuf_converter_proto_MappingTest_descriptor.getNestedTypes().get(1);
+    internal_static_net_badata_protobuf_converter_proto_MappingTest_NestedMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_net_badata_protobuf_converter_proto_MappingTest_NestedMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

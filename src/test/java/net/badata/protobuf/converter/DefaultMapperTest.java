@@ -15,6 +15,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.Collections;
 import java.util.Arrays;
 
 import static net.badata.protobuf.converter.mapping.MappingResult.Result;
@@ -65,6 +66,8 @@ public class DefaultMapperTest {
 				.setNestedValue(MappingProto.NestedTest.newBuilder().setStringValue("4"))
 				.addStringListValue("10")
 				.addNestedListValue(MappingProto.NestedTest.newBuilder().setStringValue("20"))
+				.putAllSimpleMap(Collections.singletonMap("key", "value"))
+				.putAllNestedMap(Collections.singletonMap("key", MappingProto.NestedTest.newBuilder().setStringValue("20").build()))
 				.build();
 	}
 
@@ -83,6 +86,9 @@ public class DefaultMapperTest {
 		MappingDomain.NestedTest nestedList = new MappingDomain.NestedTest();
 		nested.setStringValue("120");
 		testDomain.setNestedListValue(Arrays.asList(nestedList));
+
+		testDomain.setSimpleMap(Collections.singletonMap("key", "value"));
+		testDomain.setNestedMap(Collections.singletonMap("key", nested));
 	}
 
 	private void createPrimitiveTestDomain() {
@@ -148,6 +154,19 @@ public class DefaultMapperTest {
 		result = mapper.mapToDomainField(findDomainField("nestedListValue"), testProtobuf, testDomain);
 		testMappingResult(result, Result.COLLECTION_MAPPING, testProtobuf.getNestedListValueList(), testDomain);
 	}
+
+	@Test
+	public void testMapMappingToProtobuf() throws MappingException {
+		exception = ExpectedException.none();
+		MappingProto.MappingTest.Builder protobufBuilder = MappingProto.MappingTest.newBuilder();
+		MappingResult result = mapper
+				.mapToProtobufField(findDomainField("simpleMap"), testDomain, protobufBuilder);
+		testMappingResult(result, Result.MAP_MAPPING, testDomain.getSimpleMap(), protobufBuilder);
+
+		result = mapper.mapToProtobufField(findDomainField("nestedMap"), testDomain, protobufBuilder);
+		testMappingResult(result, Result.MAP_MAPPING, testDomain.getNestedMap(), protobufBuilder);
+	}
+
 
 	@Test
 	public void testMapNestedToDomain() throws MappingException {

@@ -187,6 +187,11 @@ public final class Converter {
 				if (FieldUtils.isComplexType(collectionType)) {
 					mappedValue = createDomainValueList(collectionType, mappedValue);
 				}
+				fieldWriter.write(fieldResolver, mappedValue);
+				break;
+			case MAP_MAPPING:
+				Class<?>[] mapTypes = FieldUtils.extractMapTypes(fieldResolver.getField());
+				mappedValue = createDomainValueMap(mapTypes[0], mapTypes[1], (Map)mappedValue);
 			case MAPPED:
 			default:
 				fieldWriter.write(fieldResolver, mappedValue);
@@ -201,6 +206,8 @@ public final class Converter {
 	private <T> List<T> createDomainValueList(final Class<T> type, final Object protobufCollection) {
 		return createNestedConverter().toDomain(type, (List<? extends Message>) protobufCollection);
 	}
+
+
 
 	/**
 	 * Create Protobuf dto list from domain object list.
@@ -300,6 +307,11 @@ public final class Converter {
 					mappedValue = createProtobufValueList(protobufCollectionClass, fieldResolver.getDomainType(),
 							(Collection) mappedValue);
 				}
+				fieldWriter.write(fieldResolver, mappedValue);
+				break;
+			case MAP_MAPPING:
+				Class<?>[] mapTypes = MessageUtils.getMessageMapTypes(mappingResult.getDestination(), FieldUtils.createProtobufGetterName(fieldResolver));
+				mappedValue = createProtobufValueMap(mapTypes[0], mapTypes[1], (Map) mappedValue);
 			case MAPPED:
 			default:
 				fieldWriter.write(fieldResolver, mappedValue);
@@ -311,6 +323,43 @@ public final class Converter {
 			domainCollectionClass, final Collection<?> domainCollection) {
 		return createNestedConverter()
 				.toProtobuf((Class<? extends Collection>) domainCollectionClass, type, domainCollection);
+	}
+	private Map createProtobufValueMap(final Class keyClass, final Class valueClass, final Map mappedValue) {
+		boolean protoKey = false, protoValue = false;
+		if (FieldUtils.isComplexType(keyClass)) {
+			protoKey = true;
+		}
+		if (FieldUtils.isComplexType(valueClass)) {
+			protoValue = true;
+		}
+		Map protobufMap = new HashMap<>();
+		if (mappedValue != null) {
+			for (Iterator<Map.Entry> it = mappedValue.entrySet().iterator(); it.hasNext();) {
+				Map.Entry<?, ?> entry = it.next();
+				protobufMap.put(protoKey ? toProtobuf((Class<Message>)keyClass, entry.getKey()) : entry.getKey(),
+						protoValue ? toProtobuf((Class<Message>)valueClass, entry.getValue()) : entry.getValue());
+			}
+		}
+		return protobufMap;
+	}
+
+	private Map createDomainValueMap(final Class keyClass, final Class valueClass, Map mappedValue) {
+		boolean protoKey = false, protoValue = false;
+		if (FieldUtils.isComplexType(keyClass)) {
+			protoKey = true;
+		}
+		if (FieldUtils.isComplexType(valueClass)) {
+			protoValue = true;
+		}
+		Map domainMap = new HashMap<>();
+		if (mappedValue != null) {
+			for (Iterator<Map.Entry> it = mappedValue.entrySet().iterator(); it.hasNext();) {
+				Map.Entry<?, ?> entry = it.next();
+				domainMap.put(protoKey ? toDomain(keyClass, (Message)entry.getKey()) : entry.getKey(),
+						protoValue ? toDomain(valueClass, (Message)entry.getValue()) : entry.getValue());
+			}
+		}
+		return domainMap;
 	}
 
 }
